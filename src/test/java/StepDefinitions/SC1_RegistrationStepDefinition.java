@@ -45,7 +45,7 @@ public class SC1_RegistrationStepDefinition {
         driver.findElement(By.id("Password")).sendKeys("P@ssw0rd");
         driver.findElement(By.id("ConfirmPassword")).sendKeys("P@ssw0rd");
         */
-        newUser.RegistrationSteps("Thanks1@Udacity2023.com","P@ssw0rd","P@ssw0rd");
+        newUser.RegistrationSteps("Thanks@Udacity2023.com","P@ssw0rd","P@ssw0rd");
         driver.findElement(By.id("register-button")).click();
 
     }

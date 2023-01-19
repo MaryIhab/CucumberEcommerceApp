@@ -1,6 +1,6 @@
 package StepDefinitions;
 
-import Pages.LoginPage;
+import Pages.ForgetPasswordPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,10 +10,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class ForgotPasswordDefinition {
+public class SC3_ForgotPasswordDefinition {
     WebDriver driver=null;
 
-    LoginPage login;
+    ForgetPasswordPage newPassword;
+
     @Given("user navigates to home page")
     public void user_open_browser() throws InterruptedException {
         String chromePath = System.getProperty("user.dir") + "\\src\\main\\resources\\chromedriver.exe";
@@ -22,14 +23,15 @@ public class ForgotPasswordDefinition {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         Thread.sleep(3000);
-        login = new LoginPage(driver);
+        newPassword = new ForgetPasswordPage(driver);
     }
     @When("user click on forgot link and enters correct email")
     public void ForgetPassword() throws InterruptedException {
         driver.navigate().to("https://demo.nopcommerce.com/login?returnUrl=%2F");
         Thread.sleep(3000);
         driver.findElement(By.partialLinkText("Forgot password")).click();
-        driver.findElement(By.id("Email")).sendKeys("tempo@mail.com");
+        //driver.findElement(By.id("Email")).sendKeys("Thanks@Udacity2023.com");
+        newPassword.newPasswordSteps("Thanks@Udacity2023.com");
         driver.findElement(By.name("send-email")).click();
 
     }
@@ -41,6 +43,7 @@ public class ForgotPasswordDefinition {
 
     }
     @And("Close")
+    //@After
     public void close_browser() throws InterruptedException {
         Thread.sleep(3000);
         driver.close();

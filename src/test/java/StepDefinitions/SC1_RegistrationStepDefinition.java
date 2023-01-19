@@ -1,11 +1,9 @@
 package StepDefinitions;
-import io.cucumber.java.After;
+import Pages.RegistrationPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import Pages.LoginPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
@@ -14,11 +12,12 @@ import org.openqa.selenium.support.ui.Select;
 
 
 
-public class RegistrationStepDefinition {
+public class SC1_RegistrationStepDefinition {
 
     WebDriver driver=null;
-    LoginPage login;
+    RegistrationPage newUser;
     @Given("user navigates to registration  page")
+
     public void RegistrationPage() throws InterruptedException {
         String chromePath= System.getProperty("user.dir")+"\\src\\main\\resources\\chromedriver.exe";
         //System.setProperty("webdriver.chrome.driver","C:\\Users\\mary.nassif\\Downloads\\Egy Fwd\\AutomationProject\\src\\main\\resources\\chromedriver.exe");
@@ -26,7 +25,7 @@ public class RegistrationStepDefinition {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         Thread.sleep(3000);
-        login = new LoginPage(driver);
+        newUser = new RegistrationPage(driver);
         driver.navigate().to("https://demo.nopcommerce.com/register?returnUrl=%2F");
     }
 
@@ -42,9 +41,11 @@ public class RegistrationStepDefinition {
         drpDate.selectByVisibleText("January");
         drpDate= new Select(driver.findElement(By.name("DateOfBirthYear")));
         drpDate.selectByVisibleText("2000");
-        driver.findElement(By.id("Email")).sendKeys("Thanks@UdacityJan2023.com");
+        /*driver.findElement(By.id("Email")).sendKeys("Thanks@Udacity2023.com");
         driver.findElement(By.id("Password")).sendKeys("P@ssw0rd");
         driver.findElement(By.id("ConfirmPassword")).sendKeys("P@ssw0rd");
+        */
+        newUser.RegistrationSteps("Thanks1@Udacity2023.com","P@ssw0rd","P@ssw0rd");
         driver.findElement(By.id("register-button")).click();
 
     }

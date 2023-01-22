@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="2" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="12" time="250.513">
+<testcase classname="user should be able to register to the system" name="user register with valid info" time="17.008">
+<system-out><![CDATA[When user enters all data successfully and submits..........................passed
+Then success registration message should be displayed to the user...........passed
+]]></system-out>
+</testcase>
+<testcase classname="user should be able to login to the system" name="user login with valid username and password" time="13.469">
+<system-out><![CDATA[When user enter valid username and password And user click on login button..passed
+Then user could login successfully and go to homepage.......................passed
+]]></system-out>
+</testcase>
+<testcase classname="user forgot password" name="user reset password successfully" time="13.885">
+<system-out><![CDATA[When user click on forgot link and enters correct email.....................passed
+Then user should receive email with instructions............................passed
+]]></system-out>
+</testcase>
+<testcase classname="user should be able to search" name="user search" time="17.525">
+<system-out><![CDATA[When user type in the search field..........................................passed
+Then results should be displayed based on the search criteria...............passed
+]]></system-out>
+</testcase>
+<testcase classname="user should be able to change currency" name="user changes currency" time="20.879">
+<system-out><![CDATA[When user changes current currency..........................................passed
+Then currency should be changed.............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="user should be able to choose category" name="user selects category" time="17.453">
+<system-out><![CDATA[When user selects category..................................................passed
+Then category should be displayed...........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="user should be able to choose color" name="user selects color" time="19.564">
+<system-out><![CDATA[When user selects color.....................................................passed
+Then results should be filtered with the selected color.....................passed
+]]></system-out>
+</testcase>
+<testcase classname="user should be able to choose tags" name="user selects tags" time="18.543">
+<system-out><![CDATA[When user selects tag.......................................................passed
+Then results should be filtered with the selected tag.......................passed
+]]></system-out>
+</testcase>
+<testcase classname="user should be able to add to cart" name="user selects an item to be added to the cart" time="32.522">
+<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#checkout&quot;}&#10;  (Session info: chrome=109.0.5414.75)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.7.2', revision: '4d4020c3b7'&#10;System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_351'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [a5f61ce0413fa938df0aba1c64415a28, findElement {using=id, value=checkout}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.75, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\MARY~1.NAS\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:54088}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54088/devtoo..., se:cdpVersion: 109.0.5414.75, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: a5f61ce0413fa938df0aba1c64415a28" type="org.openqa.selenium.NoSuchElementException"><![CDATA[When user adds an item to the cart..........................................passed
+Then item should be added to the cart.......................................failed
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#checkout"}
+  (Session info: chrome=109.0.5414.75)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.7.2', revision: '4d4020c3b7'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_351'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a5f61ce0413fa938df0aba1c64415a28, findElement {using=id, value=checkout}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.75, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\MARY~1.NAS\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:54088}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54088/devtoo..., se:cdpVersion: 109.0.5414.75, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a5f61ce0413fa938df0aba1c64415a28
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:535)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:351)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:343)
+	at StepDefinitions.SC9_Cart.ExpectedCart(SC9_Cart.java:56)
+	at ✽.item should be added to the cart(file:///C:/Users/mary.nassif/Downloads/Egy%20Fwd/CucumberEcommerceApp/src/main/resources/features/SC09_ShoppingCart.feature:6)
+]]></failure>
+</testcase>
+<testcase classname="user should be able to add item to wishlist" name="user adds item to wishlist" time="28.515">
+<system-out><![CDATA[When user adds an item to the wishlist......................................passed
+Then item should be added to the wishlist...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="user should be able to add item to wishlist" name="user compares between items" time="19.248">
+<system-out><![CDATA[When user adds items to compare.............................................passed
+Then item should be added to the compare....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="user submits an order" name="user place an order successfully" time="31.394">
+<failure message="" type="java.lang.NullPointerException"><![CDATA[When user adds items to cart and place order................................failed
+Then order should be created successfully...................................skipped
+
+StackTrace:
+java.lang.NullPointerException
+	at StepDefinitions.SC12_Order.order(SC12_Order.java:38)
+	at ✽.user adds items to cart and place order(file:///C:/Users/mary.nassif/Downloads/Egy%20Fwd/CucumberEcommerceApp/src/main/resources/features/SC12_Order.feature:5)
+]]></failure>
+</testcase>
+</testsuite>

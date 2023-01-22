@@ -1,0 +1,2 @@
+file:src/main/resources/features/SC09_ShoppingCart.feature:4
+file:src/main/resources/features/SC12_Order.feature:4
